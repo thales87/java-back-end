@@ -45,8 +45,8 @@ public class UserRestController {
 	}
 	
 	@GetMapping("/cpf/{cpf}")
-	public UserDTO getUsuarioCPF(@PathVariable String cpf) {
-		return userService.findByCpf(cpf);
+	public UserDTO getUsuarioCPF(@RequestParam(name="key",required = true) String key ,@PathVariable String cpf) {
+		return userService.findByCpfAndKey(cpf,key);
 	}
 
 	@DeleteMapping("/{id}")

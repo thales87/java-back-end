@@ -13,7 +13,6 @@ import com.client.dto.ItemDTO;
 import com.client.dto.ProductDTO;
 import com.client.dto.ShopDTO;
 import com.client.dto.ShopReportDTO;
-import com.client.dto.UserDTO;
 import com.shop.dto.DTOConverter;
 import com.shop.model.Shop;
 import com.shop.repository.ShopRepository;
@@ -56,7 +55,7 @@ public class ShopService {
 	}
 
 	public ShopDTO save(ShopDTO shopDTO,String key) {
-		UserDTO userDTO = userService.getUserByCpf(shopDTO.getUserIdentifier(), key);
+		userService.getUserByCpf(shopDTO.getUserIdentifier(), key);
 		validateProducts(shopDTO.getItems());
 		
 		shopDTO.setTotal(shopDTO.getItems().stream().map(x -> x.getPrice()).reduce((float) 0, Float::sum));

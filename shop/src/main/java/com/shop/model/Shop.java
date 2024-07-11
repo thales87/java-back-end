@@ -32,6 +32,7 @@ public class Shop {
 	private String userIdentifier;
 	private Float total;
 	private LocalDateTime date;
+	//periodo
 
 	@ElementCollection(fetch = FetchType.EAGER)
 	@CollectionTable(name = "item", joinColumns = @JoinColumn(name = "shop_id"))
