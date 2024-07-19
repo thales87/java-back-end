@@ -1,5 +1,6 @@
 package com.gateway;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.gateway.route.RouteLocator;
@@ -13,16 +14,26 @@ public class GatewayApplication {
 		SpringApplication.run(GatewayApplication.class, args);
 	}
 	
+	@Value("${USER_API_URL:http://localhost:8080}")
+	private String userApiURL;
+
+	@Value("${PRODUCT_API_URL:http://localhost:8081}")
+	private String productApiURL;
+
+	@Value("${SHOPPING_API_URL:http://localhost:8082}")
+	private String shoppingApiURL;
+	
 	@Bean
-	public RouteLocator customRouterLocator(RouteLocatorBuilder builder) {
+	public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
 		return builder.routes()
 				.route("user_route", r -> r.path("/user/**")
-						.uri("http://localhost:8080"))
+						.uri(userApiURL))
 				.route("product_route", r -> r.path("/product/**")
-						.uri("http://localhost:8081"))
+						.uri(productApiURL))
 				.route("shopping_route", r -> r.path("/shopping/**")
-						.uri("http://localhost:8082"))
+						.uri(shoppingApiURL))
 				.build();
+
 	}
 
 }
