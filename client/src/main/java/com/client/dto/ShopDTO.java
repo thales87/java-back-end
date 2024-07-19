@@ -14,6 +14,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class ShopDTO {
 
+	private Long id;
 	private String userIdentifier;
 	private Float total;
 	private LocalDateTime date;
