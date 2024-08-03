@@ -13,15 +13,15 @@ public class DTOConverter {
 		categoryDTO.setNome(category.getNome());
 		return categoryDTO;
 	}
-	
+
 	public static ProductDTO convert(Product product) {
 		ProductDTO productDTO = new ProductDTO();
-		productDTO.setId(product.getId()!=null?product.getId():null);
+		productDTO.setId(product.getId() != null ? product.getId() : null);
 		productDTO.setNome(product.getNome());
 		productDTO.setDescricao(product.getDescricao());
 		productDTO.setPreco(product.getPreco());
 		productDTO.setProductIdentifier(product.getProductIdentifier());
-		if(product.getCategory()!=null) {
+		if (product.getCategory() != null) {
 			productDTO.setCategoryDTO(DTOConverter.convert(product.getCategory()));
 		}
 		return productDTO;

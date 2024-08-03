@@ -18,6 +18,11 @@ client/.project
 client/.settings/
 client/target/
 
+keycloak/.classpath
+keycloak/.project
+keycloak/.settings/
+keycloak/target/
+
 /.metadata/
 
 *.iml

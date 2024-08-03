@@ -14,13 +14,13 @@ public class GatewayApplication {
 		SpringApplication.run(GatewayApplication.class, args);
 	}
 	
-	@Value("${USER_API_URL:http://localhost:8080}")
+	@Value("${USER_API_URL:http://localhost:8085}")
 	private String userApiURL;
 
-	@Value("${PRODUCT_API_URL:http://localhost:8081}")
+	@Value("${PRODUCT_API_URL:http://localhost:8083}")
 	private String productApiURL;
 
-	@Value("${SHOPPING_API_URL:http://localhost:8082}")
+	@Value("${SHOPPING_API_URL:http://localhost:8084}")
 	private String shoppingApiURL;
 	
 	@Bean
