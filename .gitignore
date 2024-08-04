@@ -23,6 +23,8 @@ keycloak/.project
 keycloak/.settings/
 keycloak/target/
 
+chupacabra/
+
 /.metadata/
 
 *.iml
